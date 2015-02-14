@@ -4,19 +4,6 @@
   tags:
     - deploy
 
-- name: Install Linux headers
-  shell: apt-get install linux-image-extra-`uname -r`
-
-- name: Install GIT
-  apt: pkg=git state=present
-  tags:
-    - deploy
-    
-- name: Install Linux Image Extras
-  shell: apt-get install linux-image-extra-$(uname -r)
-  tags:
-    - deploy
-
 - name: Add Docker repository key
   command: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
   tags:
